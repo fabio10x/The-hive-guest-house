@@ -1,0 +1,27 @@
+<div class="pt-24 bg-white">
+  <!-- Page Header -->
+  <section class="py-16 bg-stone-100 text-center">
+    <div class="container mx-auto px-6">
+      <h1 appScrollFade class="text-4xl md:text-5xl font-bold text-stone-900">Our Gallery</h1>
+      <p appScrollFade class="text-lg text-stone-600 mt-4 max-w-3xl mx-auto">A glimpse into the comfort and style that awaits you at The Hive Guest House.</p>
+    </div>
+  </section>
+
+  <!-- Image Grid -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        @for (image of images; track image.url) {
+          <div appScrollFade class="overflow-hidden rounded-lg shadow-lg gallery-item">
+            <img 
+              [ngSrc]="image.url" 
+              [alt]="image.alt"
+              width="800"
+              height="600"
+              class="w-full h-full object-cover">
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>
